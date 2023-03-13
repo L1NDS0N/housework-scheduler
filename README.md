@@ -1,16 +1,15 @@
 ## Projeto Housework Scheduler
 
-  
+ 
 
-#### feito para um exame para a empresa Eco Consultoria
+#### feito para um exame para a empresa Eco Consultoria, desde já quero agradecer a confiança que me deram de poder desenvolver um projeto com uma nova tecnologia sem experiências prévias com tais, esse tipo de atitude para mim, deveria ser referência na contratação de desenvolvedores juniores, de qualquer forma, muito obrigado pela oportunidade
 
 ###### Projeto utilizou as stacks MySql, Angular 15 e Php 8.1
 ##### principais dependencias do projeto: php 8.1, nodejs e composer, tenha certeza de que estas tecnologias estão instaladas no seu computador.
- 
 
 
 
-o primeiro comando que você precisará executar é o de instalação de pacotes do laravel, para isso, com o composer instalado, execute um terminar no diretório server com o seguinte comando:
+#### o primeiro comando que você precisará executar é o de instalação de pacotes do laravel, para isso, com o composer instalado, execute um terminal no diretório server com o seguinte comando:
 
      composer update
 
@@ -74,4 +73,9 @@ em seguida rode
 
     npm run start
 feito isso, seu projeto já está completamente no ar, em ambiente local.
+
+para visualizar o projeto, em seu navegador, abra a seguinte página na web:
+```
+  http://localhost:4200
+```
 
