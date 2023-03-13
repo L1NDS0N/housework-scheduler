@@ -1,0 +1,64 @@
+<div class="pb-2">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex flex-column">
+        <div class="d-flex flex-row align-items-center">
+          <input
+            type="text"
+            class="form-control form-control-lg"
+            [(ngModel)]="schedule.task"
+            placeholder="Descreva a tarefa"
+          />
+          <div>
+            <button (click)="create()" type="button" class="btn btn-primary m-2">Adicionar</button>
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mt-2">
+          <span class="m-2">Urgência</span>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              value="alta"
+              id="alta"
+              [(ngModel)]="schedule.priority"
+            />
+            <label class="form-check-label bg-danger badge" for="alta"
+              >Alta</label
+            >
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              value="media"
+              id="media"
+              [(ngModel)]="schedule.priority"
+            />
+            <label class="form-check-label bg-warning badge" for="media"
+              >Média</label
+            >
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              value="baixa"
+              id="baixa"
+              [(ngModel)]="schedule.priority"
+            />
+            <label class="form-check-label bg-success badge" for="baixa"
+              >Baixa</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

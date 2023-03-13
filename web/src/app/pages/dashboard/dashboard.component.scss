@@ -1,0 +1,33 @@
+#list1 .form-control {
+  border-color: transparent;
+}
+#list1 .form-control:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+#list1 .select-input.form-control[readonly]:not([disabled]) {
+  background-color: #fbfbfb;
+}
+.background-done {
+  background-color: #14a44e4b;
+}
+
+@keyframes spinner {
+  to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner .6s linear infinite;
+}

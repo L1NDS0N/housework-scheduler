@@ -1,0 +1,45 @@
+<nav
+  class="position-fixed vw-100 navbar navbar-expand-lg navbar-light bg-light"
+  style="z-index: 1000"
+>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Housework Scheduler</a>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link">Bem vindo(a) {{user.user.name}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a title="Fazer logout" class="text-reset me-3" (click)="logout()" role="button">
+        <i class="fas fa-solid fa-right-from-bracket"></i>
+      </a>
+    </div>
+    <div class="d-flex align-items-center" title="{{user.user.name}}">
+      <div>
+        <a
+          class="d-flex align-items-center"
+          role="button"
+        >
+          <img
+            *ngIf="user.user.photoUrl"
+            src="{{ user.user.photoUrl }}"
+            class="rounded-circle"
+            height="50"
+            alt="{{user.user.name}}"
+
+            loading="lazy"
+          />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a class="dropdown-item">Deslogar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

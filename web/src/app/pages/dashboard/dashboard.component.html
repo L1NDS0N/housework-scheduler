@@ -1,0 +1,112 @@
+<app-navbar></app-navbar>
+<section class="vh-100">
+  <div class="container py-5 h-00">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div style="border-radius: 0.75rem; background-color: #f3f6f8">
+          <div class="card-body py-4 px-4 px-md-5">
+            <div
+              style="z-index: 1000"
+              class="position-fixed bottom-0 end-0 rounded-circle m-4"
+            >
+              <button
+                type="button"
+                class="btn btn-primary btn-lg"
+                (click)="openModal(template)"
+              >
+                Nova tarefa
+              </button>
+            </div>
+
+            <ng-template #template>
+              <div class="modal-header">
+                <h4 class="modal-title pull-left">Nova tarefa</h4>
+                <button
+                  type="button"
+                  class="pull-right"
+                  (click)="modalRef.hide()"
+                >
+                  <i class="fas fa-light fa-xmark"></i>
+                </button>
+              </div>
+              <div class="modal-body">
+                <app-schedule-creator></app-schedule-creator>
+              </div>
+            </ng-template>
+
+            <hr class="my-4" />
+
+            <ul
+              class="list-group list-group-horizontal rounded-0 bg-transparent"
+            >
+              <div class="card-body">
+                <h4
+                  class="align-middle align-self-center"
+                  *ngIf="!(schedules.length != 0) && !isLoading"
+                >
+                  Você não tem tarefas cadastradas ainda.
+                </h4>
+
+                <table
+                  class="table mb-0 scrollbar-primary"
+                  *ngIf="schedules.length != 0"
+                >
+                  <thead>
+                    <tr>
+                      <th scope="col">Tarefa</th>
+                      <th scope="col">Urgência</th>
+                      <th scope="col">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      *ngFor="let schedule of schedules"
+                      class="fw-normal hover-shadow"
+                      [ngClass]="{
+                        'background-done': schedule.done
+                      }"
+                    >
+                      <td class="align-middle">
+                        <span>{{ schedule.task }}</span>
+                      </td>
+                      <td class="align-middle">
+                        <h6 class="mb-0">
+                          <span
+                            class="badge"
+                            [ngClass]="{
+                              'bg-warning': schedule.priority === 'MEDIA',
+                              'bg-danger': schedule.priority === 'ALTA',
+                              'bg-success': schedule.priority === 'BAIXA'
+                            }"
+                            >{{ schedule.priority | uppercase }}</span
+                          >
+                        </h6>
+                      </td>
+                      <td class="align-middle">
+                        <a
+                          style="cursor: pointer"
+                          (click)="done(schedule)"
+                          title="Concluir"
+                          ><i class="fas fa-check text-success me-3"></i
+                        ></a>
+                        <a
+                          (click)="remove(schedule.id)"
+                          title="Remover"
+                          style="cursor: pointer"
+                          ><i class="fas fa-trash-alt text-danger"></i
+                        ></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="align-middle align-self-center" *ngIf="isLoading">
+    <i class="fas fa-thin fa-spinner-third spinner"></i>
+  </span>
+</section>
